@@ -595,6 +595,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			prepareRefresh();
 
 			// Tell the subclass to refresh the internal bean factory.
+			// 刷新beanFactory
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
@@ -676,6 +677,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		// Initialize any placeholder property sources in the context environment.
+		// 留给子类实现 （思考：必须实现使用抽象方法，不是必须实现用空方法即可，这种扩展点肯定不用抽象的）
 		initPropertySources();
 
 		// Validate that all properties marked as required are resolvable:
